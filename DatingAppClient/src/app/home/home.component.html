@@ -1,0 +1,27 @@
+<div class="container ">
+  <div class="text-center">
+    <h3>Welcome to Dating App</h3>
+    <span clas="h4">Come on in to view your matches... all you need to do is sign up!</span>
+    <div class="form-group mt-1">
+      <input type="button" class="btn btn-primary mr-2" (click)="showRegister()" value="Register" />
+      <input type="button" class="btn btn-info" value="Lear More" />
+    </div>
+  </div>
+</div>
+
+<div *ngIf="registerMode">
+  <app-register (cancelRegister)="RegisterCancel($event)"></app-register>
+</div>
+
+<table class="table table-stripped table-bordered" >
+    <thead>
+        <th>Id</th>
+        <th>Username</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{user.id}}</td>
+            <td> {{user.userName}}</td>
+        </tr>
+    </tbody>
+</table>
